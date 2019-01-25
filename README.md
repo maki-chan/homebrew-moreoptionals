@@ -1,4 +1,4 @@
-# Maki-chan Moreoptionals
+# Moreoptionals
 
 ## How do I install these formulae?
 `brew install maki-chan/moreoptionals/<formula>`
