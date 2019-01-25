@@ -5,7 +5,7 @@ class Ffmpeg < Formula
   sha256 "a38ec4d026efb58506a99ad5cd23d5a9793b4bf415f2c4c2e9c1bb444acd1994"
   head "https://github.com/FFmpeg/FFmpeg.git"
   
-  full_alias_name "homebrew/homebrew-core/ffmpeg"
+  core_names "homebrew/homebrew-core/ffmpeg"
 
   depends_on "nasm" => :build
   depends_on "pkg-config" => :build
