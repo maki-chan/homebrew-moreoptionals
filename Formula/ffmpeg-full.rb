@@ -28,7 +28,6 @@ class FfmpegFull < Formula
   depends_on "libbluray"
   depends_on "libbs2b"
   depends_on "libcaca"
-  depends_on "libcdio"
   depends_on "libdc1394"
   depends_on "libgsm"
   depends_on "libilbc"
@@ -89,7 +88,6 @@ class FfmpegFull < Formula
       --enable-libbluray
       --enable-libbs2b
       --enable-libcaca
-      --enable-libcdio
       --enable-libcodec2
       --enable-libdavs2
       --enable-libdc1394
