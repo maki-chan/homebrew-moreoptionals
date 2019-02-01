@@ -13,7 +13,6 @@ class FfmpegFull < Formula
   depends_on "aom"
   depends_on "chromaprint"
   depends_on "codec2"
-  depends_on "dav1d"
   depends_on "fdk-aac"
   depends_on "fontconfig"
   depends_on "freetype"
@@ -93,7 +92,6 @@ class FfmpegFull < Formula
       --enable-libcaca
       --enable-libcdio
       --enable-libcodec2
-      --enable-libdav1d
       --enable-libdavs2
       --enable-libdc1394
       --enable-libfdk-aac
