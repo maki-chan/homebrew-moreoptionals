@@ -3,6 +3,7 @@ class FfmpegFull < Formula
   homepage "https://ffmpeg.org/"
   url "https://ffmpeg.org/releases/ffmpeg-4.1.tar.xz"
   sha256 "a38ec4d026efb58506a99ad5cd23d5a9793b4bf415f2c4c2e9c1bb444acd1994"
+  revision 1
   head "https://github.com/FFmpeg/FFmpeg.git"
 
   depends_on "nasm" => :build
@@ -11,17 +12,27 @@ class FfmpegFull < Formula
 
   depends_on "aom"
   depends_on "chromaprint"
+  depends_on "codec2"
+  depends_on "dav1d"
   depends_on "fdk-aac"
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "frei0r"
+  depends_on "fribidi"
   depends_on "game-music-emu"
+  depends_on "gmp"
+  depends_on "jack"
+  depends_on "kvazaar"
   depends_on "lame"
+  depends_on "lensfun"
   depends_on "libass"
   depends_on "libbluray"
   depends_on "libbs2b"
   depends_on "libcaca"
+  depends_on "libcdio"
+  depends_on "libdc1394"
   depends_on "libgsm"
+  depends_on "libilbc"
   depends_on "libmodplug"
   depends_on "librsvg"
   depends_on "libsoxr"
@@ -30,11 +41,14 @@ class FfmpegFull < Formula
   depends_on "libvmaf"
   depends_on "libvorbis"
   depends_on "libvpx"
+  depends_on "libxml2"
   depends_on "opencore-amr"
+  depends_on "opencv"
   depends_on "openh264"
   depends_on "openjpeg"
   depends_on "openssl"
   depends_on "opus"
+  depends_on "pulseaudio"
   depends_on "rtmpdump"
   depends_on "rubberband"
   depends_on "sdl2"
@@ -52,6 +66,9 @@ class FfmpegFull < Formula
   depends_on "xz"
   depends_on "zeromq"
   depends_on "zimg"
+  
+  depends_on "maki-chan/moreoptionals/davs2"
+  depends_on "maki-chan/moreoptionals/xavs2"
 
   def install
     args = %W[
@@ -67,24 +84,37 @@ class FfmpegFull < Formula
       --enable-chromaprint
       --enable-ffplay
       --enable-frei0r
+      --enable-gmp
       --enable-gpl
       --enable-libaom
       --enable-libass
       --enable-libbluray
       --enable-libbs2b
       --enable-libcaca
+      --enable-libcdio
+      --enable-libcodec2
+      --enable-libdav1d
+      --enable-libdavs2
+      --enable-libdc1394
       --enable-libfdk-aac
       --enable-libfontconfig
       --enable-libfreetype
+      --enable-libfribidi
       --enable-libgme
       --enable-libgsm
+      --enable-libilbc
+      --enable-libjack
+      --enable-libkvazaar
+      --enable-liblensfun
       --enable-libmodplug
       --enable-libmp3lame
       --enable-libopencore-amrnb
       --enable-libopencore-amrwb
+      --enable-libopencv
       --enable-libopenh264
       --enable-libopenjpeg
       --enable-libopus
+      --enable-libpulse
       --enable-librsvg
       --enable-librtmp
       --enable-librubberband
@@ -104,6 +134,8 @@ class FfmpegFull < Formula
       --enable-libwebp
       --enable-libx264
       --enable-libx265
+      --enable-libxavs2
+      --enable-libxml2
       --enable-libxvid
       --enable-libzimg
       --enable-libzmq
