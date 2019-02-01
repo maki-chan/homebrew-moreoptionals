@@ -42,7 +42,6 @@ class FfmpegFull < Formula
   depends_on "libvpx"
   depends_on "libxml2"
   depends_on "opencore-amr"
-  depends_on "opencv"
   depends_on "openh264"
   depends_on "openjpeg"
   depends_on "openssl"
@@ -108,7 +107,6 @@ class FfmpegFull < Formula
       --enable-libmp3lame
       --enable-libopencore-amrnb
       --enable-libopencore-amrwb
-      --enable-libopencv
       --enable-libopenh264
       --enable-libopenjpeg
       --enable-libopus
