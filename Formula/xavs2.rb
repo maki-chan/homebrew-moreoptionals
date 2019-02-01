@@ -5,11 +5,13 @@ class Xavs2 < Formula
   sha256 "28f9204dc9384336de7c6210cd3317d2d6b94ec23a4d1b6113fcbe7f00d7230b"
 
   def install
-    system "./configure", "--enable-shared",
-                          "--enable-static",
-                          "--prefix=#{prefix}"
-    
-    system "make", "install"
+    Dir.chdir("build/linux") do
+      system "./configure", "--enable-shared",
+                            "--enable-static",
+                            "--prefix=#{prefix}"
+
+      system "make", "install"
+    end
   end
 
   test do
