@@ -5,6 +5,7 @@ class Davs2 < Formula
   sha256 "de93800f016cbaf08cb40184a8069050dc625da5240a528155137052d1cf81c8"
   
   def install
+    cd "build/linux"
     system "./configure", "--enable-shared",
                           "--prefix=#{prefix}"
     
