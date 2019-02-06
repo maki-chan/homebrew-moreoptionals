@@ -51,7 +51,8 @@ class MkvtoolnixFull < Formula
                           "--with-moc=#{qt.opt_bin}/moc",
                           "--with-uic=#{qt.opt_bin}/uic",
                           "--with-rcc=#{qt.opt_bin}/rcc",
-                          "--enable-qt"
+                          "--enable-qt",
+                          "LDFLAGS=-framework CoreFoundation"
     system "rake", "-j#{ENV.make_jobs}"
     system "rake", "install"
   end
