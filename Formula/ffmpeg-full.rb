@@ -19,7 +19,6 @@ class FfmpegFull < Formula
   depends_on "fribidi"
   depends_on "game-music-emu"
   depends_on "gmp"
-  depends_on "gnutls"
   depends_on "jack"
   depends_on "kvazaar"
   depends_on "lame"
@@ -82,7 +81,6 @@ class FfmpegFull < Formula
       --enable-ffplay
       --enable-frei0r
       --enable-gmp
-      --enable-gnutls
       --enable-gpl
       --enable-libaom
       --enable-libass
