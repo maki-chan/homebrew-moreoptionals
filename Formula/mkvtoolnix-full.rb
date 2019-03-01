@@ -1,7 +1,7 @@
 class MkvtoolnixFull < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
-  url "https://mkvtoolnix.download/sources/mkvtoolnix-30.1.0.tar.xz"
+  url "https://mkvtoolnix.download/sources/mkvtoolnix-31.0.0.tar.xz"
   sha256 "4628f40d62d359edb1441c52381b1f3a61aa227279133d7e01257f91e0d92591"
 
   head do
