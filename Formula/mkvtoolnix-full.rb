@@ -2,6 +2,7 @@ class MkvtoolnixFull < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
   url "https://mkvtoolnix.download/sources/mkvtoolnix-42.0.0.tar.xz"
+  revision 1
   sha256 "2c8215c22a3a75925c0f1568235fbe2e34172021e43fb45081400b7c6b610033"
 
   head do
@@ -11,6 +12,7 @@ class MkvtoolnixFull < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "gcc" => :build
   depends_on "docbook-xsl" => :build
   depends_on "fmt" => :build
   depends_on "pkg-config" => :build
@@ -27,8 +29,6 @@ class MkvtoolnixFull < Formula
   depends_on "cmark"
 
   def install
-    ENV.cxx11
-
     features = %w[flac libebml libmagic libmatroska libogg libvorbis]
     extra_includes = ""
     extra_libs = ""
@@ -52,7 +52,9 @@ class MkvtoolnixFull < Formula
                           "--with-uic=#{qt.opt_bin}/uic",
                           "--with-rcc=#{qt.opt_bin}/rcc",
                           "--enable-qt",
-                          "LDFLAGS=-framework CoreFoundation"
+                          "LDFLAGS=-framework CoreFoundation",
+                          "CC=gcc-9",
+                          "CXX=g++-9"
     system "rake", "-j#{ENV.make_jobs}"
     system "rake", "install"
   end
