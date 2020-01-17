@@ -54,7 +54,8 @@ class MkvtoolnixFull < Formula
                           "--enable-qt",
                           "LDFLAGS=-framework CoreFoundation",
                           "CC=gcc-9",
-                          "CXX=g++-9"
+                          "CXX=g++-9",
+                          "CXXFLAGS=-std=c++17"
     system "rake", "-j#{ENV.make_jobs}"
     system "rake", "install"
   end
