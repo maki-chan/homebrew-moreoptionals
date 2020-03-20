@@ -1,9 +1,8 @@
 class MkvtoolnixFull < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
-  url "https://mkvtoolnix.download/sources/mkvtoolnix-42.0.0.tar.xz"
-  revision 1
-  sha256 "2c8215c22a3a75925c0f1568235fbe2e34172021e43fb45081400b7c6b610033"
+  url "https://mkvtoolnix.download/sources/mkvtoolnix-44.0.0.tar.xz"
+  sha256 "d93843ed669d837c67c2c929f4ac2bd1e848ea5db7586681226fa371e88c92cb"
 
   head do
     url "https://gitlab.com/mbunkus/mkvtoolnix.git"
@@ -27,8 +26,14 @@ class MkvtoolnixFull < Formula
   depends_on "libvorbis"
   depends_on "qt"
   depends_on "cmark"
+  depends_on :macos => :mojave
+
+  uses_from_macos "libxslt" => :build
+  uses_from_macos "ruby" => :build
 
   def install
+    ENV.cxx11
+
     features = %w[flac libebml libmagic libmatroska libogg libvorbis]
     extra_includes = ""
     extra_libs = ""
@@ -51,11 +56,7 @@ class MkvtoolnixFull < Formula
                           "--with-moc=#{qt.opt_bin}/moc",
                           "--with-uic=#{qt.opt_bin}/uic",
                           "--with-rcc=#{qt.opt_bin}/rcc",
-                          "--enable-qt",
-                          "LDFLAGS=-framework CoreFoundation",
-                          "CC=gcc-9",
-                          "CXX=g++-9",
-                          "CXXFLAGS=-std=c++17"
+                          "--enable-qt"
     system "rake", "-j#{ENV.make_jobs}"
     system "rake", "install"
   end
