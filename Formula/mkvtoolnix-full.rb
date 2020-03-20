@@ -11,7 +11,6 @@ class MkvtoolnixFull < Formula
     depends_on "libtool" => :build
   end
 
-  depends_on "gcc" => :build
   depends_on "docbook-xsl" => :build
   depends_on "fmt" => :build
   depends_on "pkg-config" => :build
